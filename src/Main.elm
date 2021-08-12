@@ -4,9 +4,9 @@ import Html exposing (text)
 
 
 main =
-    text (sayHello "Functional Elm!")
+    text (bottlesOf "juice" 99)
 
 
-sayHello : String -> String
-sayHello name =
-    "Hello, " ++ name ++ "."
+bottlesOf : String -> Int -> String
+bottlesOf contents amount =
+    String.fromInt amount ++ " bottles of " ++ contents ++ " on the wall."
