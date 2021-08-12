@@ -4418,10 +4418,12 @@ var $elm$virtual_dom$VirtualDom$toHandlerInt = function (handler) {
 			return 3;
 	}
 };
-var $author$project$Main$greeting = 'Hello, Static Elm!';
+var $author$project$Main$meaningOfLife = 42;
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $author$project$Main$main = $elm$html$Html$text($author$project$Main$greeting);
+var $elm$core$Debug$toString = _Debug_toString;
+var $author$project$Main$main = $elm$html$Html$text(
+	$elm$core$Debug$toString($author$project$Main$meaningOfLife));
 _Platform_export({'Main':{'init':_VirtualDom_init($author$project$Main$main)(0)(0)}});}(this));
 
   var app = Elm.Main.init({ node: document.getElementById("elm") });
