@@ -1,13 +1,18 @@
 module Picshare exposing (main)
 
+import Browser
 import Html exposing (..)
 import Html.Attributes exposing (class, src)
 import Html.Events exposing (onClick)
 
 
-main : Html Msg
+main : Program () { url : String, caption : String, liked : Bool } Msg
 main =
-    view initialModel
+    Browser.sandbox
+        { init = initialModel
+        , view = view
+        , update = update
+        }
 
 
 view : { url : String, caption : String, liked : Bool } -> Html Msg
@@ -28,6 +33,16 @@ type Msg
 baseUrl : String
 baseUrl =
     "https://programming-elm.com/"
+
+
+update : Msg -> { url : String, caption : String, liked : Bool } -> { url : String, caption : String, liked : Bool }
+update msg model =
+    case msg of
+        Like ->
+            { model | liked = True }
+
+        Unlike ->
+            { model | liked = False }
 
 
 viewDetailedPhoto : { url : String, caption : String, liked : Bool } -> Html Msg
