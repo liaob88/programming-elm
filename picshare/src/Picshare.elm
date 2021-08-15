@@ -34,3 +34,6 @@ viewDetailedPhoto url caption =
         , div [ class "photo-info" ]
             [ h2 [ class "caption" ] [ text caption ] ]
         ]
+
+initialModel : { url: String, caption: String }
+initialModel = { url = baseUrl ++ "1.jpg", caption = "Surfing" }
